@@ -1,0 +1,19 @@
+# Testy logiki gry i kontrola budowania wersji jednoplikowej przy każdym pushu / pull requeście.
+name: Testy
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Testy logiki
+        run: node tests/logic.test.js
+      - name: Budowanie wersji jednoplikowej
+        run: python3 tools/build-single-html.py

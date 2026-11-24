@@ -1,0 +1,13 @@
+{
+  "name": "geotycoon",
+  "version": "1.0.0",
+  "description": "GeoTycoon — geograficzna gra strategiczna offline (HTML/CSS/JS, bez zależności)",
+  "private": true,
+  "scripts": {
+    "test": "node tests/logic.test.js",
+    "build:single": "python3 tools/build-single-html.py",
+    "start": "python3 -m http.server 8000"
+  },
+  "author": "CappySoft.pl",
+  "license": "UNLICENSED"
+}

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pl" data-theme="light" data-skin="diorama">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="GeoTycoon — geograficzna gra strategiczna offline">
+  <title>GeoTycoon</title>
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/game.css">
+  <!-- Styl graficzny „Makieta 3D” (przechylona mapa, miękkie „gliniane” elementy) -->
+  <link rel="stylesheet" href="css/skins/diorama.css">
+</head>
+<body>
+  <a class="skip-link" href="#main" data-i18n="ui.skip">Przejdź do treści</a>
+
+  <header class="app-header">
+    <button class="brand" id="brand" type="button" data-i18n-attr="aria-label:ui.home;title:ui.home">
+      <span class="brand-logo" aria-hidden="true">🌍</span>
+      <span class="brand-name">GeoTycoon</span>
+    </button>
+    <div class="header-tools">
+      <div class="lang-switch" role="group" data-i18n-attr="aria-label:lang.aria">
+        <button type="button" data-lang="pl" lang="pl" aria-label="Polski">PL</button>
+        <span class="lang-sep" aria-hidden="true">|</span>
+        <button type="button" data-lang="en" lang="en" aria-label="English">EN</button>
+      </div>
+      <button class="icon-btn theme-toggle" id="theme-toggle" type="button">
+        <svg class="icon-moon" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false">
+          <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" fill="currentColor"/>
+        </svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false">
+          <circle cx="12" cy="12" r="4.5" fill="currentColor"/>
+          <g stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <line x1="12" y1="1.5" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22.5"/>
+            <line x1="1.5" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22.5" y2="12"/>
+            <line x1="4.6" y1="4.6" x2="6.3" y2="6.3"/><line x1="17.7" y1="17.7" x2="19.4" y2="19.4"/>
+            <line x1="4.6" y1="19.4" x2="6.3" y2="17.7"/><line x1="17.7" y1="6.3" x2="19.4" y2="4.6"/>
+          </g>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <section id="screen-menu" class="screen"></section>
+    <section id="screen-newgame" class="screen" hidden></section>
+    <section id="screen-howto" class="screen" hidden></section>
+    <section id="screen-settings" class="screen" hidden></section>
+    <section id="screen-game" class="screen screen-game" hidden></section>
+    <section id="screen-end" class="screen" hidden></section>
+    <noscript><p class="noscript">GeoTycoon wymaga włączonego JavaScriptu. / GeoTycoon requires JavaScript.</p></noscript>
+  </main>
+
+  <footer class="app-footer">
+    <span>GeoTycoon <span id="app-version">v1.0.0</span></span>
+    <span class="footer-sep" aria-hidden="true">·</span>
+    <span><span aria-hidden="true">📴 </span><span data-i18n="app.offline">Gra działa offline</span></span>
+    <span class="footer-sep" aria-hidden="true">·</span>
+    <span class="copyright">© 2026 CappySoft.pl</span>
+  </footer>
+
+  <div id="modal-root"></div>
+  <div id="toast-root" class="toast-root" aria-live="polite" aria-atomic="false"></div>
+
+  <!-- Dane (konfiguracja gry) -->
+  <script src="data/balance.js"></script>
+  <script src="data/regions.js"></script>
+  <script src="data/buildings.js"></script>
+  <script src="data/events.js"></script>
+  <script src="data/scenarios.js"></script>
+  <!-- Tłumaczenia -->
+  <script src="js/i18n/i18n.js"></script>
+  <script src="js/i18n/pl.js"></script>
+  <script src="js/i18n/en.js"></script>
+  <!-- Logika gry (bez DOM) -->
+  <script src="js/utils/validation.js"></script>
+  <script src="js/utils/random.js"></script>
+  <script src="js/state.js"></script>
+  <script src="js/economy.js"></script>
+  <script src="js/buildings.js"></script>
+  <script src="js/events.js"></script>
+  <script src="js/scoring.js"></script>
+  <script src="js/gameLoop.js"></script>
+  <script src="js/saveManager.js"></script>
+  <!-- Interfejs -->
+  <script src="js/ui/dom.js"></script>
+  <script src="js/ui/mapGeometry.js"></script>
+  <script src="js/ui/mapView.js"></script>
+  <script src="js/ui/buildingPanel.js"></script>
+  <script src="js/ui/regionPanel.js"></script>
+  <script src="js/ui/eventModal.js"></script>
+  <script src="js/ui/summaryPanel.js"></script>
+  <script src="js/ui/screens.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+# System / edytory
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+
+# Node (projekt nie ma zależności, ale na wszelki wypadek)
+node_modules/
+
+# Archiwa
+*.zip
